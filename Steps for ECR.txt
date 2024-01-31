@@ -1,0 +1,13 @@
+Steps for Creating a IAM role for ECR and Configure it Local:
+
+Step 1 : Create a IAM role with ECR full access
+
+Step 2 : Genarate Access key&pass in IAM role.
+
+Step 3 : Download AWS CLI in local.
+
+Step 4 : Run "aws configure".
+
+Step 5 : Enter the Access key,pass,region,o/p type.
+
+Step 6 : Run the 4 Command provided by AWS ECR.
