@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM public.ecr.aws/lambda/python:3.10
+=======
+FROM public.ecr.aws/lambda/python:3.11
+>>>>>>> 5356cd6a6991b57cd1b5ba8bacb034238d80035a
 
 # Copy requirements.txt
 COPY requirements.txt ${LAMBDA_TASK_ROOT}
