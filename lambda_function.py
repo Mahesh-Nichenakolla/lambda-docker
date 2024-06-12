@@ -15,4 +15,4 @@ def calculate_sum():
         return render_template('result.html', num1=num1, num2=num2, result=result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
