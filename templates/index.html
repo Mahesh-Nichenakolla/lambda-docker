@@ -1,33 +1,20 @@
 <!DOCTYPE html>
-<html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ML API</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
 </head>
-
 <body>
- <div class="login">
-	<h1>Predict Salary Analysis of the Student</h1>
-
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="CGPA" placeholder="CGPA" required="required" />
-
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    <h1>Sum Calculator</h1>
+    <form action="/sum" method="post">
+        <label for="num1">Enter Number 1:</label>
+        <input type="number" name="num1" id="num1" required>
+        <br><br>
+        <label for="num2">Enter Number 2:</label>
+        <input type="number" name="num2" id="num2" required>
+        <br><br>
+        <input type="submit" value="Calculate Sum">
     </form>
-
-   <br>
-   <br>
-   {{ prediction_text }}
-
- </div>
-
-
 </body>
 </html>
