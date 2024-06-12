@@ -1,29 +1,18 @@
-import numpy as np
 from flask import Flask, render_template, request
-import pickle
 
-def handler(event, context):
-    application = Flask(__name__)
-    model = pickle.load(open('model.pkl', 'rb'))
+app = Flask(__name__)
 
-    @application.route('/')
-    def index():
-        return render_template('index.html')
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    @application.route('/predict',methods=['GET','POST'])
-    def predict():
-        print('hi')
-        '''
-        For rendering results on HTML GUI
-        '''
-        int_features = [int(x) for x in request.form.values()]
-        final_features = [np.array(int_features)]
-        prediction = model.predict(final_features)
+@app.route('/sum', methods=['POST'])
+def calculate_sum():
+    if request.method == 'POST':
+        num1 = float(request.form['num1'])
+        num2 = float(request.form['num2'])
+        result = num1 + num2
+        return render_template('result.html', num1=num1, num2=num2, result=result)
 
-        output = round(prediction[0], 2)
-
-        return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
-
-
-    if __name__ == "__main__":
-        application.run(host='0.0.0.0', port=5000)
+if __name__ == '__main__':
+    app.run(debug=True)
