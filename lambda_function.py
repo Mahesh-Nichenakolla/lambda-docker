@@ -11,7 +11,7 @@ def calculate_sum():
     if request.method == 'POST':
         num1 = float(request.form['num1'])
         num2 = float(request.form['num2'])
-        result = num1 + num2
+        result = num1 + num2 +0
         return render_template('result.html', num1=num1, num2=num2, result=result)
 
 if __name__ == '__main__':
